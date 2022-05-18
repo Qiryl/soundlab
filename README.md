@@ -1,0 +1,2 @@
+# strive
+Fuck kubernetes

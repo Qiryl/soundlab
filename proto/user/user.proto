@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package userService;
+
+import "user_messages.proto";
+
+option go_package = "./;userService";
+
+service userService {
+    rpc Register(RegisterReq) returns (AuthResp);
+    rpc Login(LoginReq) returns (AuthResp);
+}

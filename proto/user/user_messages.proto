@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package userService;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "./;userService";
+
+message EmptyRes{}
+
+message Pagination {
+    int32 Limit = 1;
+    string Cursor = 2;
+    string OrderBy = 3;
+}
+
+message User {
+    string ID = 1;
+    string Email = 2;
+    string Name = 3;
+    string FullName = 4;
+    string Password = 5;
+    string Bio = 6;
+    string AvatarURL = 7;
+    google.protobuf.Timestamp CreatedAt = 8;
+    google.protobuf.Timestamp UpdatedAt = 9;
+}
+
+message RegisterReq {
+    string Email = 1;
+    string Name = 2;
+    string FullName = 3;
+    string Password = 4;
+    string Bio = 5;
+}
+
+message AuthResp {
+    string ID = 1;
+    google.protobuf.Timestamp CreatedAt = 2;
+    google.protobuf.Timestamp UpdatedAt = 3;
+}
+
+message LoginReq {
+    string Email = 1;
+    string Password = 2;
+}
